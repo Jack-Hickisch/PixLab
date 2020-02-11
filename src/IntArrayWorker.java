@@ -30,7 +30,7 @@ public class IntArrayWorker {
 	/**
 	 * Method to return the total using a nested for-each loop
 	 * 
-	 * @return the total of the values in the array
+	 * @return the total of the values in the array+
 	 */
 	public int getTotalNested() {
 		int total = 0;
@@ -85,4 +85,45 @@ public class IntArrayWorker {
 		}
 	}
 
+	public int getCount(int num)
+	{
+		int total = 0;
+		for (int row = 0; row < matrix.length; row++)
+ 		{
+ 			for (int col = 0; col < matrix[0].length; col++)
+ 			{
+ 				if (matrix[row][col] == num)
+				{
+					total++;
+				}
+ 			}
+ 		}
+ 		return total;
+	}
+
+	public int getLargest()
+	{
+		int max = matrix[0][0];
+		for (int row = 0; row < matrix.length; row++)
+ 		{
+ 			for (int col = 0; col < matrix[0].length; col++)
+ 			{
+ 				if (matrix[row][col] > max)
+				{
+					max = matrix[row][col];
+				}
+ 			}
+ 		}
+ 		return max;
+	}
+
+	public int getColTotal(int col)
+	{
+		int total = 0;
+ 		for (int row = 0; row < matrix.length; row++)
+ 		{
+			total += matrix[row][col];
+ 		}
+ 		return total;
+	}
 }
