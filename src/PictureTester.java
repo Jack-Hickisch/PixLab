@@ -16,6 +16,31 @@ public class PictureTester
     beach.zeroBlue();
     beach.explore();
   }
+
+  /** Method to test keepOnlyBlue */
+  public static void testKeepOnlyBlue()
+  {
+    Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.zeroRed();
+    beach.zeroGreen();
+    beach.explore();
+  }
+
+  /** Method to test negate */
+  public static void testNegate()
+  {
+    Picture beach = new Picture("beach.jpg");
+		Pixel[][] pixels = beach.getPixels2D();
+		for (Pixel[] rowArray : pixels) {
+			for (Pixel pixelObj : rowArray) {
+				pixelObj.setRed(255 - pixelObj.getRed());
+				pixelObj.setBlue(255 - pixelObj.getBlue());
+				pixelObj.setGreen(255 - pixelObj.getGreen());
+			}
+		}
+    beach.explore();
+  }
   
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
@@ -60,20 +85,22 @@ public class PictureTester
     // to run
     // testZeroBlue();
     // testKeepOnlyBlue();
+    testNegate();
     // testKeepOnlyRed();
     //testKeepOnlyGreen();
     //testNegate();
     //testGrayscale();
+    // on write a grayscale
     //testFixUnderwater();
     //testMirrorVertical();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
-    //testCollage();
+    // testCollage();
     //testCopy();
     //testEdgeDetection();
-    //testEdgeDetection2();
+    // testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);
