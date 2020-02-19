@@ -41,6 +41,40 @@ public class PictureTester
 		}
     beach.explore();
   }
+
+  public static void testGreyscale()
+  {
+    Picture beach = new Picture("beach.jpg");
+    Pixel[][] pixels = beach.getPixels2D();
+    int avg = 0;
+    for (Pixel[] rowArray : pixels) {
+			for (Pixel pixelObj : rowArray) {
+        avg = (pixelObj.getRed() + pixelObj.getBlue() + pixelObj.getGreen()) / 3;
+				pixelObj.setRed(avg);
+				pixelObj.setBlue(avg);
+				pixelObj.setGreen(avg);
+        avg = 0;
+		  }
+    }
+    beach.explore();
+  }
+
+  public static void testFixUnderwater()
+  {
+    Picture water = new Picture("water.jpg");
+    Pixel[][] pixels = water.getPixels2D();
+    water.explore();
+    for (Pixel[] rowArray : pixels) {
+			for (Pixel pixelObj : rowArray) {
+        if (pixelObj.getBlue() > 159 && pixelObj.getGreen() < 170)
+        {
+				  pixelObj.setBlue((int)(Double.valueOf(pixelObj.getBlue()) + Double.valueOf(pixelObj.getBlue()) * .3));
+        }
+				pixelObj.setGreen(pixelObj.getGreen() - 35);
+		  }
+    }
+    water.explore();
+  }
   
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
@@ -85,13 +119,13 @@ public class PictureTester
     // to run
     // testZeroBlue();
     // testKeepOnlyBlue();
-    testNegate();
+    // testGreyscale();
     // testKeepOnlyRed();
     //testKeepOnlyGreen();
     //testNegate();
     //testGrayscale();
     // on write a grayscale
-    //testFixUnderwater();
+    testFixUnderwater();
     //testMirrorVertical();
     //testMirrorTemple();
     //testMirrorArms();
