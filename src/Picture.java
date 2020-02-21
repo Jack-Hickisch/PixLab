@@ -191,8 +191,22 @@ public class Picture extends SimplePicture {
 				leftPixel = pixels[row][col];
 				rightPixel = pixels[row][mirrorPoint - col + mirrorPoint];
 				rightPixel.setColor(leftPixel.getColor());
+				count++;
 			}
 		}
+		System.out.println(count);
+	}
+
+	public void mirrorArms() // working on this one
+	{
+		Pixel[][] pixels = this.getPixels2D();
+
+		// 171, 238 start
+		// 196, 294 stop
+
+		// other side
+		// 158, 105 start
+		// 191, 170 stop
 	}
 
 	/**
