@@ -87,10 +87,18 @@ public class PictureTester
 
   public static void testMirrorHorizontal()
   {
-    Picture caterpillar = new Picture("caterpillar.jpg");
-    caterpillar.explore();
-    caterpillar.mirrorHorizontal();
-    caterpillar.explore();
+    Picture motorcycle = new Picture("redMotorcycle.jpg");
+    motorcycle.explore();
+    motorcycle.mirrorHorizontal();
+    motorcycle.explore();
+  }
+
+  public static void testMirrorHorizontalBotToTop()
+  {
+    Picture motorcycle = new Picture("redMotorcycle.jpg");
+    motorcycle.explore();
+    motorcycle.mirrorHorizontalBotToTop();
+    motorcycle.explore();
   }
 
   public static void testMirrorVerticalRightToLeft()
@@ -142,7 +150,7 @@ public class PictureTester
     // on write a grayscale
     // testFixUnderwater();
     // testMirrorVerticalRightToLeft();
-    testMirrorHorizontal(); // working on this one
+    testMirrorHorizontalBotToTop();
     //testMirrorVertical();
     //testMirrorTemple();
     //testMirrorArms();
