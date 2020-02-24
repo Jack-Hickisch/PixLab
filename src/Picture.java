@@ -197,16 +197,61 @@ public class Picture extends SimplePicture {
 		System.out.println(count);
 	}
 
-	public void mirrorArms() // working on this one
+	public void mirrorArms()
 	{
 		Pixel[][] pixels = this.getPixels2D();
+		Pixel topPixel = null;
+		Pixel bottomPixel = null;
+		int height = 191;
+		for (int row = 157; row < height; row++) {
+			for (int col = 103; col < 168; col++) {
+				topPixel = pixels[row][col];
+				bottomPixel = pixels[height - row + height][col];
+				bottomPixel.setColor(topPixel.getColor());
+			}
+		}
 
-		// 171, 238 start
-		// 196, 294 stop
+		height = 200;
+		for (int row = 169; row < height; row++) {
+			for (int col = 237; col < 295; col++) {
+				topPixel = pixels[row][col];
+				bottomPixel = pixels[height - row + height][col];
+				bottomPixel.setColor(topPixel.getColor());
+			}
+		}
 
+		// 157 = row
+		// 103 = col
+		// to
+		// 191 = row
+		// 168 = col
+		
 		// other side
-		// 158, 105 start
-		// 191, 170 stop
+		// 169 = row
+		// 237 = col
+		// to
+		// 200 = row
+		// 295 = col
+	}
+
+	public void mirrorGull()
+	{
+		Pixel[][] pixels = this.getPixels2D();
+		Pixel realPixel = null;
+		Pixel mirrorPixel = null;
+		for (int row = 236; row < 323; row++) {
+			for (int col = 234; col < 346; col++) {
+				realPixel = pixels[row][col];
+				mirrorPixel = pixels[row][col + 112];
+				mirrorPixel.setColor(realPixel.getColor());
+			}
+		}
+
+		// 236 = row
+		// 234 = col
+		// to
+		// 323 = row
+		// 346 = col
 	}
 
 	/**
