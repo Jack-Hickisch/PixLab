@@ -198,9 +198,9 @@ public class PictureTester
     // testMirrorGull();
     //testMirrorDiagonal();
     // testCollage();
-    myCollage();
+    // myCollage();
     // testCopy();
-    //testEdgeDetection();
+    testEdgeDetection();
     // testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
